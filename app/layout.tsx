@@ -1,7 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { CartProvider } from "@/lib/CartContext";
-import Footer from "../components/Footer";
+import Footer from "@/components/Footer";
 
 export default function RootLayout({
   children,
@@ -10,14 +10,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
-      >
-        <Navbar />
-        <CartProvider style={{ flex: 1 }}>
-          {children}
-          <Footer />
-        </CartProvider>
+      <body style={{ margin: 0 }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            minHeight: "100vh",
+          }}
+        >
+          <CartProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </CartProvider>
+        </div>
       </body>
     </html>
   );

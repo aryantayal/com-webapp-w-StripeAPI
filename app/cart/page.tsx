@@ -5,7 +5,7 @@ import styles from "./cart.module.css";
 import { useRouter } from "next/navigation";
 
 const CartPage = () => {
-  const { items, getCartTotal } = useCart();
+  const { items, getCartTotal, getCartItemsQuantity } = useCart();
   const router = useRouter();
   const handleCheckout = () => {
     if (items.length > 0) {
@@ -17,7 +17,9 @@ const CartPage = () => {
   const totalAmount = getCartTotal() / 100;
   return (
     <main className={styles.main}>
-      <h1 className={styles.title}>Your Cart (Items: {})</h1>
+      <h1 className={styles.title}>
+        Your Cart (Item(s): {getCartItemsQuantity()})
+      </h1>
       {items.length === 0 ? (
         <h3 className={styles.emptyMessage}>Your cart is empty.</h3>
       ) : (
