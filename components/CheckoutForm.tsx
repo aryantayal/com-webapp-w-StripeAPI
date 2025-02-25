@@ -55,6 +55,9 @@ const CheckoutForm = ({ amount }: { amount: number }) => {
       <button className={styles.payButton} disabled={!stripe || loading}>
         {loading ? "Processing..." : `Pay $${(amount / 100).toFixed(2)}`}
       </button>
+      {errorMessage && (
+        <div className={styles.errorMessage}>{errorMessage}</div>
+      )}
     </form>
   );
 };

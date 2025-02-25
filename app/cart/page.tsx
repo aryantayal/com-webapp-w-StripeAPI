@@ -3,10 +3,9 @@ import ShoppingCartTile from "@/components/ShoppingCartTile";
 import { useCart } from "@/lib/CartContext";
 import styles from "./cart.module.css";
 import { useRouter } from "next/navigation";
-import { get } from "http";
 
 const CartPage = () => {
-  const { items, updateQuantity, getCartTotal } = useCart();
+  const { items, getCartTotal } = useCart();
   const router = useRouter();
   const handleCheckout = () => {
     if (items.length > 0) {
