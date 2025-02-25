@@ -4,7 +4,13 @@ import { CartContextType, CartItem, Product } from "@/types";
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
-export function CartProvider({ children }: { children: React.ReactNode }) {
+export function CartProvider({
+  children,
+  style,
+}: {
+  children: React.ReactNode;
+  style: object;
+}) {
   const [items, setItems] = useState<CartItem[]>([]);
 
   const addToCart = (product: Product) => {
@@ -44,7 +50,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     <CartContext.Provider
       value={{ items, addToCart, removeFromCart, updateQuantity, getCartTotal }}
     >
-      {children}
+      <div style={style}>{children}</div>
     </CartContext.Provider>
   );
 }
