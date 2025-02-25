@@ -1,0 +1,39 @@
+.main {
+  background-color: #f8f9fa;
+}
+.title {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+.emptyMessage {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+.totalContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.checkoutButton {
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
+.checkoutButton:hover {
+  transform: scale(1.01);
+}
