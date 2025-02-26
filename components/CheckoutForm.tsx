@@ -37,7 +37,7 @@ const CheckoutForm = ({ amount }: { amount: number }) => {
     const { error } = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: `http://localhost:3000/success?amount=${amount}`,
+        return_url: `${window.location.origin}/success?amount=${amount}`,
       },
     });
 
@@ -51,12 +51,21 @@ const CheckoutForm = ({ amount }: { amount: number }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className={styles.addressElement}>
-        <h3 className={styles.paymentTitle}>Shipping Information</h3>
-        {clientSecret && <AddressElement options={{ mode: "shipping" }} />}
+        {clientSecret && (
+          <>
+            <h3 className={styles.paymentTitle}>Shipping Information</h3>
+            <AddressElement options={{ mode: "shipping" }} />
+          </>
+        )}
       </div>
-      <h3 className={styles.paymentTitle}>Payment Information</h3>
+
       <div className={styles.paymentElement}>
-        {clientSecret && <PaymentElement />}
+        {clientSecret && (
+          <>
+            <h3 className={styles.paymentTitle}>Payment Information</h3>
+            <PaymentElement />
+          </>
+        )}
       </div>
       <button className={styles.payButton} disabled={!stripe || loading}>
         {loading ? "Processing..." : `Pay $${(amount / 100).toFixed(2)}`}

@@ -1,0 +1,45 @@
+/* File: pages/SuccessPage.module.css */
+.container {
+  text-align: center;
+  margin: 50px auto;
+  padding: 20px;
+  max-width: 600px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.title {
+  font-size: 2rem;
+  color: #1d1d1f;
+}
+
+.message {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.details {
+  font-size: 1rem;
+  color: #555;
+}
+
+.homeLink {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
+.homeLink:hover {
+  transform: scale(1.01);
+}
