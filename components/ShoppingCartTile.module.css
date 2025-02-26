@@ -83,7 +83,7 @@
   color: #0056b3;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 480px) {
   .flexContainer {
     grid-template-columns: 1fr;
     gap: 1rem;

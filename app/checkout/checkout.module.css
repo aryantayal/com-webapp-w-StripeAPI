@@ -2,7 +2,6 @@
   font-size: 1.5rem;
   font-weight: 500;
   color: #636366;
-
   text-align: center;
 }
 
@@ -44,6 +43,9 @@
     flex-direction: column;
     align-items: center;
     padding: 1rem;
+  }
+  .checkoutContainer {
+    gap: 1rem;
   }
 
   .shoppingCartTile,

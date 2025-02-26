@@ -4,6 +4,7 @@ import {
   useStripe,
   useElements,
   PaymentElement,
+  AddressElement,
 } from "@stripe/react-stripe-js";
 import styles from "./CheckoutForm.module.css";
 
@@ -49,6 +50,11 @@ const CheckoutForm = ({ amount }: { amount: number }) => {
 
   return (
     <form onSubmit={handleSubmit}>
+      <div className={styles.addressElement}>
+        <h3 className={styles.paymentTitle}>Shipping Information</h3>
+        {clientSecret && <AddressElement options={{ mode: "shipping" }} />}
+      </div>
+      <h3 className={styles.paymentTitle}>Payment Information</h3>
       <div className={styles.paymentElement}>
         {clientSecret && <PaymentElement />}
       </div>

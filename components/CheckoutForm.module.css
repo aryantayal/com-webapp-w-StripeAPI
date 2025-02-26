@@ -1,7 +1,13 @@
 .paymentElement {
-  display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
+}
+.paymentTitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #636366;
+  text-align: center;
   padding: 1rem;
 }
 .payButton {
