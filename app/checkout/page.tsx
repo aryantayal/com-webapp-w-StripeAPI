@@ -30,6 +30,7 @@ const Checkout = () => {
     <main className={styles.main}>
       <div className={styles.checkoutContainer}>
         <div className={styles.shoppingCartTile}>
+          <h2 className={styles.subtitle}>Order Summary</h2>
           <ShoppingCartTile />
         </div>
         <div className={styles.paymentContainer}>

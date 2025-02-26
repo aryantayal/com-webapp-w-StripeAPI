@@ -16,4 +16,11 @@ export const products: Product[] = [
     imageUrl: "/images/jacket.png",
     description: "Timeless denim jacket perfect for any casual outfit",
   },
+  {
+    id: "3",
+    name: "Cozy Sweatpants",
+    price: 6999,
+    imageUrl: "/images/sweatpants.png",
+    description: "Comfortable lounge sweatpants perfect for any casual outfit",
+  },
 ];

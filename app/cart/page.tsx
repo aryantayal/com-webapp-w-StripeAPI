@@ -11,14 +11,16 @@ const CartPage = () => {
     if (items.length > 0) {
       router.push("/checkout");
     } else {
-      console.log("add items");
+      router.push("/");
     }
   };
   const totalAmount = getCartTotal() / 100;
   return (
     <main className={styles.main}>
       <h1 className={styles.title}>
-        Your Cart (Item(s): {getCartItemsQuantity()})
+        {items.length > 0
+          ? `Your Cart (${getCartItemsQuantity()} Items)`
+          : "Your Cart is Empty"}
       </h1>
       {items.length === 0 ? (
         <h3 className={styles.emptyMessage}>Your cart is empty.</h3>
