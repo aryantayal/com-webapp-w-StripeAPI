@@ -3,8 +3,11 @@
 import { ProductCardProps } from "@/types";
 import styles from "./ProductCard.module.css";
 import Image from "next/image";
+import { useState } from "react";
 
 const ProductCard = ({ product, addToCart }: ProductCardProps) => {
+  const [buttonText, setButtonText] = useState("Add to Cart");
+
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
@@ -23,11 +26,14 @@ const ProductCard = ({ product, addToCart }: ProductCardProps) => {
         <button
           className={styles.button}
           onClick={() => {
-            console.log(product);
+            setButtonText("Added to Cart!");
             addToCart(product);
+            setTimeout(() => {
+              setButtonText("Add to Cart");
+            }, 1200);
           }}
         >
-          Add to Cart
+          {buttonText}
         </button>
       </div>
     </div>
