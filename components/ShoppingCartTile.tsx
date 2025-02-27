@@ -14,7 +14,7 @@ const ShoppingCartTile = () => {
             <div className={styles.imageWrapper}>
               <Image
                 src={item.imageUrl}
-                alt={item.name}
+                alt={`Image of ${item.name}`}
                 width={120}
                 height={120}
                 className={styles.image}

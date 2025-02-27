@@ -10,7 +10,7 @@ const SuccessContent = () => {
   const amount = searchParams.get("amount");
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} role="alert" aria-live="polite">
       <h1 className={styles.title}>Payment Successful!</h1>
       <p className={styles.message}>Thank you for your purchase.</p>
       {amount && (

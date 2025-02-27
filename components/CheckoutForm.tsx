@@ -49,12 +49,17 @@ const CheckoutForm = ({ amount }: { amount: number }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} aria-label="Checkout form">
       <div className={styles.addressElement}>
         {clientSecret && (
           <>
-            <h3 className={styles.paymentTitle}>Shipping Information</h3>
-            <AddressElement options={{ mode: "shipping" }} />
+            <h3 className={styles.paymentTitle} id="shipping-info">
+              Shipping Information
+            </h3>
+            <AddressElement
+              options={{ mode: "shipping" }}
+              aria-labelledby="shipping-info"
+            />
           </>
         )}
       </div>
@@ -62,16 +67,24 @@ const CheckoutForm = ({ amount }: { amount: number }) => {
       <div className={styles.paymentElement}>
         {clientSecret && (
           <>
-            <h3 className={styles.paymentTitle}>Payment Information</h3>
-            <PaymentElement />
+            <h3 className={styles.paymentTitle} id="payment-info">
+              Payment Information
+            </h3>
+            <PaymentElement aria-labelledby="payment-info" />
           </>
         )}
       </div>
-      <button className={styles.payButton} disabled={!stripe || loading}>
+      <button
+        className={styles.payButton}
+        disabled={!stripe || loading}
+        aria-disabled={!stripe || loading}
+      >
         {loading ? "Processing..." : `Pay $${(amount / 100).toFixed(2)}`}
       </button>
       {errorMessage && (
-        <div className={styles.errorMessage}>{errorMessage}</div>
+        <div className={styles.errorMessage} role="alert" tabIndex={-1}>
+          {errorMessage}
+        </div>
       )}
     </form>
   );

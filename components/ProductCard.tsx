@@ -9,7 +9,7 @@ const ProductCard = ({ product, addToCart }: ProductCardProps) => {
   const [buttonText, setButtonText] = useState("Add to Cart");
 
   return (
-    <div className={styles.card}>
+    <article className={styles.card}>
       <div className={styles.imageContainer}>
         <Image
           src={product.imageUrl}
@@ -17,6 +17,7 @@ const ProductCard = ({ product, addToCart }: ProductCardProps) => {
           width={300}
           height={300}
           className={styles.image}
+          aria-label={`Image of ${product.name}`}
         />
       </div>
       <div className={styles.content}>
@@ -32,11 +33,12 @@ const ProductCard = ({ product, addToCart }: ProductCardProps) => {
               setButtonText("Add to Cart");
             }, 1200);
           }}
+          aria-label={`Add ${product.name} to cart`}
         >
           {buttonText}
         </button>
       </div>
-    </div>
+    </article>
   );
 };
 

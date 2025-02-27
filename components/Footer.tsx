@@ -5,7 +5,7 @@ import styles from "./Footer.module.css";
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} role="contentinfo">
       <div className={styles.container}>
         <div className={styles.section}>
           <h3>Cozy Threads</h3>
@@ -16,13 +16,19 @@ const Footer = () => {
           <h3>Shop</h3>
           <ul>
             <li>
-              <Link href="/">Home</Link>
+              <Link href="/" tabIndex={0}>
+                Home
+              </Link>
             </li>
             <li>
-              <Link href="/cart">Cart</Link>
+              <Link href="/cart" tabIndex={1}>
+                Cart
+              </Link>
             </li>
             <li>
-              <Link href="/checkout">Checkout</Link>
+              <Link href="/checkout" tabIndex={2}>
+                Checkout
+              </Link>
             </li>
           </ul>
         </div>
